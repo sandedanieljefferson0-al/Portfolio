@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="back-btn" href="index.html">Back to Portfolio</a>
+    <section class="report-page">
+        <h1>Online Voting System</h1>
+        <p>An online voting web application that allows voting from different places and intervals.</p>
+        <h2>Overview</h2>
+        <p>This report describes the application workflow, security considerations, and user interface design.</p>
+        <h2>Technologies</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>IndexedDB</li>
+        </ul>
+    </section>
+
+    <section class="section">
+
+        <h2>Introduction</h2>
+
+        <p>
+            The I Can Vote Online Voting System is a web-based application developed to
+            digitize and simplify the voting process within organizations, institutions,
+            universities, and communities. The system allows eligible voters to register,
+            view candidates, cast votes electronically, and view election results in a
+            secure and transparent environment. The project was developed using HTML,
+            CSS, JavaScript, and IndexedDB for local data storage.
+        </p>
+
+        <h2>Problem Statement</h2>
+
+        <p>
+            Traditional voting methods are often time-consuming, costly, and prone to
+            errors. Physical voting requires printing ballot papers, manual vote counting,
+            and significant human involvement. In some cases, results may be delayed,
+            records may be lost, and voter participation may be limited due to distance or
+            accessibility challenges. These limitations reduce efficiency and transparency
+            in the electoral process.
+        </p>
+
+        <h2>Proposed Solution</h2>
+
+        <p>
+            The Online Voting System provides a digital platform where elections can be
+            managed electronically. Users can securely register, log in, view available
+            elections, and cast votes from any device with internet access. The system
+            automatically records votes and generates results instantly, reducing manual
+            work and improving accuracy.
+        </p>
+
+        <h2>Key Features</h2>
+
+        <ul>
+            <li>Voter Registration and Login</li>
+            <li>Candidate Management</li>
+            <li>Election Creation and Administration</li>
+            <li>Secure Voting Process</li>
+            <li>One Vote Per Voter</li>
+            <li>Real-Time Result Generation</li>
+            <li>Admin Dashboard</li>
+            <li>IndexedDB Data Storage</li>
+            <li>Responsive User Interface</li>
+        </ul>
+
+    </section>
+
+    <section class="section">
+        <p>To view the hosted web application, open <a href="https://sandedanieljefferson0-al.github.io/online-voting/">the live Online Voting System project</a>.</p>
+        <img src="voteimage.png" alt="Voting Image" style="width:100%; max-width:800px; height:auto;">
+    </section>
+
+    <section class="image-upload-section">
+        <h2>Add Project Images</h2>
+        <p>Select one or more images and they will appear below.</p>
+        <input id="imageUpload" type="file" accept="image/*" multiple>
+        <div class="uploaded-images" id="uploadedImages"></div>
+    </section>
+
+    <script>
+        const imageInput = document.getElementById('imageUpload');
+        const imageContainer = document.getElementById('uploadedImages');
+        imageInput.addEventListener('change', (event) => {
+            imageContainer.innerHTML = '';
+            Array.from(event.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    imageContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Booking Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="back-btn" href="index.html">Back to Portfolio</a>
+    <section class="report-page">
+        <h1>University Hostel Booking System</h1>
+        <p>A complete web-based application for booking and paying hostels.</p>
+        <h2>Overview</h2>
+        <p>This report covers the system design, features, and technologies used to build the hostel booking application.</p>
+        <h2>Technologies</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>MySQL</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <p>
+            Hostel Hub is an innovative digital platform designed to simplify and secure the
+            process of searching, booking, and managing hostel accommodations around
+            Mbarara University and surrounding communities mainly among students.
+        </p>
+
+<p>
+The innovation addresses challenges faced by students and travelers who
+traditionally rely on word of mouth, physical movement, or unreliable agents to
+find suitable hostels.
+</p>
+
+<p>
+Hostel Hub enables users to search hostels online, make payments, submit
+complaints, and access verified information instantly.
+</p>
+
+<p>
+The solution empowers students and hostel owners by improving safety,
+transparency, accessibility, and convenience.
+</p>
+
+<p>
+Hostel Hub reduces travel costs, eliminates fraud, and enhances access to
+accommodation services while creating an organized communication channel
+between hostel owners, university bodies, and students.
+</p>
+
+    </section>
+
+    <section class="section">
+
+        <h2>3. Introduction</h2>
+
+<p>
+Access to reliable, affordable, and secure hostels is a major concern for
+university students across Uganda.
+</p>
+
+<p>
+Many students face challenges such as walking long distances searching for
+available rooms, paying fraudulent agents, or receiving inaccurate information.
+</p>
+
+<p>
+Hostel Hub was developed to address this long-standing issue by digitizing the
+hostel booking ecosystem.
+</p>
+
+<p>
+The system provides verified hostel listings, online booking,
+communication tools, a review system, and automated search functionality.
+</p>
+
+<p>
+The innovation is relevant at both community and national levels because it
+promotes digital transformation, reduces risks, and improves service delivery.
+</p>
+
+<p>
+The primary objective is to ensure safe, fast, and direct access to hostel
+accommodation.
+</p>
+
+</section>
+
+
+    <section class="section">
+
+        <h2>4. Problem Statement</h2>
+
+<p>
+The unawareness and lack of information about available hostels around
+Mbarara University of Science and Technology leaves many students stranded
+because they do not know where to get hostels, how to access them, and who
+to contact.
+</p>
+
+<p>
+Many first-year students begin university without knowing where they will stay.
+This issue stems from a lack of centralized and accurate information regarding
+available accommodation.
+</p>
+
+<p>
+As a result, students are often forced into undesirable or last-minute
+accommodation choices, even after the semester has already begun.
+</p>
+
+<p>
+Research conducted at Mbarara University of Science and Technology
+identified poor awareness of available hostels as one of the major reasons
+students end up in poor housing conditions.
+</p>
+
+<p>
+If this challenge continues, students will continue struggling to find safe,
+reliable, and affordable accommodation.
+</p>
+<h2>Solution</h2>
+
+<p>
+Hostel Hub addresses this challenge by providing a platform that directly links
+students with hostel owners, enabling room viewing, searching, and booking
+without requiring physical movement around the university. To view the hosted
+web application, open <a href="https://sandedanieljefferson-prog.github.io/hostel-accommodation/">the live Hostel Hub project</a>.
+</p>
+
+<img src="hostelimage.png" alt="Hostel Image" style="width:100%; max-width:800px; height:auto;">
+
+</section>
+
+    <section class="image-upload-section">
+        <h2>Add Project Images</h2>
+        <p>Select one or more images and they will appear below.</p>
+        <input id="imageUpload" type="file" accept="image/*" multiple>
+        <div class="uploaded-images" id="uploadedImages"></div>
+    </section>
+
+    <script>
+        const imageInput = document.getElementById('imageUpload');
+        const imageContainer = document.getElementById('uploadedImages');
+        imageInput.addEventListener('change', (event) => {
+            imageContainer.innerHTML = '';
+            Array.from(event.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    imageContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+

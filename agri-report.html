@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinet Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="back-btn" href="index.html">Back to Portfolio</a>
+    <section class="report-page">
+        <h1>Agrinet</h1>
+        <p>A web application to enhance agriculture in the Kigezi region, built as a final year project with four coursemates.</p>
+        <h2>Overview</h2>
+        <p>This report highlights the system architecture, agricultural features, and collaboration model used during development.</p>
+        <h2>Technologies</h2>
+        <ul>
+            <li>HTML</li>
+            <li>Python</li>
+            <li>Node.js</li>
+            <li>React</li>
+            <li>MySQL Workbench</li>
+        </ul>
+    </section>
+
+    <section class="image-upload-section">
+        <h2>Add Project Images</h2>
+        <p>Select one or more images and they will appear below.</p>
+        <input id="imageUpload" type="file" accept="image/*" multiple>
+        <div class="uploaded-images" id="uploadedImages"></div>
+    </section>
+
+    <script>
+        const imageInput = document.getElementById('imageUpload');
+        const imageContainer = document.getElementById('uploadedImages');
+        imageInput.addEventListener('change', (event) => {
+            imageContainer.innerHTML = '';
+            Array.from(event.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    imageContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+
+</body>
+</html>
